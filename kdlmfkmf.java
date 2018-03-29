@@ -19,11 +19,11 @@ import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ChoiceBox;
 
 public class kdlmfkmf extends Application {
-	private  Button chequinWith, savingWith, creditWith, exitWith, backWith,chequinDep,
-	savingDep, creditDep, exitDep, backDep,	transferMain, withdrawalMain,
-	depositMain, exitMain, accountinfoMain, chequinAccI, savingAccI, creditAccI, exitAccI, backAccI,
+	private  Button nextWith, exitWith, backWith, exitDep, backDep,nextDep,transferMain, withdrawalMain,
+	depositMain, exitMain, accountinfoMain, balanceAccI, transactionAccI, nextAccI, exitAccI, backAccI,
 	signHome, exitHome;
 
 
@@ -99,18 +99,24 @@ paneWith.setPadding(new Insets(10,10,10,10));
 paneWith.setHgap(10);
 paneWith.setVgap(10);
 
+ChoiceBox <String> withDrop = new ChoiceBox <String>();
+withDrop.getItems().addAll("Credit","Chequings","Savings");
+TextField amounttextWith = new TextField ();
+Label amountlabelWith = new Label("Amount");
+Label optionslabelWith = new Label("Options");
 
-chequinWith = new Button("Chequing");
-savingWith = new Button("Saving");
-creditWith = new Button("Credit");
+nextWith = new Button("Next");
 exitWith = new Button("Exit");
 backWith = new Button("Back");
 
-paneWith.add(chequinWith,0,0);
-paneWith.add(savingWith,0,1);
-paneWith.add(creditWith,1,0);
+paneWith.add(withDrop,1,0);
+paneWith.add(optionslabelWith,0,0);
+paneWith.add(amounttextWith,1,1);
+paneWith.add(amountlabelWith,0,1);
+paneWith.add(nextWith,1,2);
 paneWith.add(backWith,0,2);
-paneWith.add(exitWith,1,2);
+paneWith.add(exitWith,0,3);
+
 
 Scene sceneWith = new Scene(paneWith);
 //stage.setScene(sceneWith);
@@ -125,6 +131,25 @@ paneDep.setPadding(new Insets(10,10,10,10));
 paneDep.setHgap(10);
 paneDep.setVgap(10);
 
+ChoiceBox <String> DropDep = new ChoiceBox <String>();
+DropDep.getItems().addAll("Credit","Chequings","Savings");
+TextField amounttextDep = new TextField ();
+Label amountlabelDep = new Label("Amount");
+Label optionslabelDep = new Label("Options");
+
+nextDep = new Button("Next");
+exitDep = new Button("Exit");
+backDep = new Button("Back");
+
+paneDep.add(DropDep,1,0);
+paneDep.add(optionslabelDep,0,0);
+paneDep.add(amounttextDep,1,1);
+paneDep.add(amountlabelDep,0,1);
+paneDep.add(nextDep,1,2);
+paneDep.add(backDep,0,2);
+paneDep.add(exitDep,0,3);
+
+/*
 chequinDep= new Button("Chequing");
 savingDep = new Button("Saving");
 creditDep = new Button("Credit");
@@ -136,6 +161,8 @@ paneDep.add(savingDep,0,1);
 paneDep.add(creditDep,1,0);
 paneDep.add(backDep,0,2);
 paneDep.add(exitDep,1,2);
+*/
+
 
 Scene sceneDep = new Scene(paneDep);
 //stage.setScene(sceneDep);
@@ -152,6 +179,28 @@ paneAccI.setPadding(new Insets(10,10,10,10));
 paneAccI.setHgap(10);
 paneAccI.setVgap(10);
 
+ChoiceBox <String> DropAccI = new ChoiceBox <String>();
+DropAccI.getItems().addAll("Credit","Chequings","Savings");
+//TextField amounttextAccI = new TextField ();
+//Label amountlabelAccI = new Label("Amount");
+Label optionslabelAccI = new Label("Options");
+
+balanceAccI = new Button("Balance");
+exitAccI = new Button("Exit");
+transactionAccI = new Button("Transactions");
+backAccI = new Button("Back");
+
+
+
+paneAccI.add(DropAccI,1,0);
+paneAccI.add(optionslabelAccI,0,0);
+paneAccI.add(balanceAccI,1,1);
+paneAccI.add(transactionAccI,0,1);
+paneAccI.add(backAccI,0,2);
+paneAccI.add(exitAccI,1,2);
+
+
+/*
 chequinAccI = new Button("Chequing");
 savingAccI = new Button("Saving");
 creditAccI = new Button("Credit");
@@ -163,14 +212,17 @@ paneAccI.add(savingAccI,0,1);
 paneAccI.add(creditAccI,1,0);
 paneAccI.add(backAccI,0,2);
 paneAccI.add(exitAccI,1,2);
+*/
+
 
 Scene sceneAccI = new Scene(paneAccI);
 //stage.setScene(sceneAccI);
 //stage.setTitle("Account Information");
 //stage.show();
 
-//end of ACCOUnt Info
+//end of ACCOUNT INFO
 
+//
 
 
 
